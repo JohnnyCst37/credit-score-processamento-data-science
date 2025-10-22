@@ -1,0 +1,29 @@
+# =====================================
+# Projeto: Credit Score - Parte 1
+# Autor: Johnny Sorato Martins Fernandes
+# Descrição: Análise e pré-processamento de dados
+# =====================================
+
+# Manipulação e Análise de Dados
+pandas==2.2.2
+numpy==1.26.4
+
+# Visualização de Dados
+matplotlib==3.9.2
+seaborn==0.13.2
+plotly==5.24.1
+
+# Pré-processamento e Modelagem
+scikit-learn==1.5.2
+imbalanced-learn==0.12.3
+
+# Utilitários
+jupyterlab==4.2.5
+notebook==7.2.1
+ipython==8.27.0
+
+# Sistema e Controle
+python-dotenv==1.0.1
+
+# (Opcional) Exibição de gráficos interativos em notebooks
+kaleido==0.2.1
