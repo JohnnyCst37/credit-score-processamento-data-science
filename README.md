@@ -12,9 +12,6 @@
 ![Imbalanced Learn](https://img.shields.io/badge/Imbalanced%20Learn-SMOTE-yellow?logo=python)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-
-# Projeto de Credit Score - Parte 1 - Processamento dos Dados
-
 <details>
 
 <summary>📚 Sumário</summary>
@@ -35,27 +32,38 @@
 
 </details>
 
-## Visão Geral do Projeto
-> Este projeto representa a **primeira etapa do desenvolvimento de um modelo de Credit Score**, conduzido durante o curso de análise e modelagem de dados.  
-> O objetivo é **preparar e compreender a base de clientes** antes da modelagem, aplicando técnicas de pré-processamento, análise univariada e bivariada, e balanceamento de classes.
+# 🧮 Projeto de Credit Score - Parte 1 - Processamento dos Dados
+
+> Este projeto representa a *primeira etapa do desenvolvimento de um modelo de Credit Score*, conduzido durante o curso de análise e modelagem de dados.  
+> O objetivo é *preparar e compreender a base de clientes* antes da modelagem, aplicando técnicas de pré-processamento, análise univariada e bivariada, e balanceamento de classes.
 
 ---
 
 ## Objetivo do Projeto  
 
-O termo **Credit Score** refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
+O termo Credit Score refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
 
-O objetivo deste projeto é **prever o risco de inadimplência** de clientes com base em atributos demográficos e financeiros, preparando os dados para uma futura modelagem preditiva.
+O objetivo deste projeto é prever o risco de inadimplência de clientes com base em atributos demográficos e financeiros, preparando os dados para uma futura modelagem preditiva.
 
 ---
 
 ## 📂 Estrutura do Projeto  
+```markdown
 
+📁 credit_score_part1/
+│
+├── data/                         # Base de dados original e tratada
+├── img/                          # Gráficos gerados nas análises
+├── notebooks/                    # Notebooks de processamento
+│   └── credit_score_parte1.ipynb
+├── README.md                     # Este arquivo
+└── requirements.txt              # Dependências do projeto
 
----
+````
+
 
 ## 🧾 Dicionário de Dados  
-
+```markdown
 | Variável              | Descrição                                                                 |
 |-----------------------|---------------------------------------------------------------------------|
 | **Age**               | Idade do cliente                                                         |
@@ -67,6 +75,7 @@ O objetivo deste projeto é **prever o risco de inadimplência** de clientes com
 | **Home**              | Tipo de residência (alugada ou própria)                                  |
 | **Credit Score**      | Score de crédito (variável-alvo)                                         |
 
+````
 ---
 
 ## Etapa 1 - Pré-Processamento  
@@ -84,62 +93,7 @@ from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 df["Income_Scaled"] = scaler.fit_transform(df[["Income"]])
 
-Perfeito 🔥
-Abaixo está a **versão final formatada e pronta para o GitHub** do seu projeto:
-
-> 📘 **Projeto de Credit Score - Parte 1: Processamento e Análise de Dados**
-> Estilo: técnico-profissional, ideal para portfólio no GitHub, com equilíbrio entre código, análise e storytelling analítico.
-
----
-
-```markdown
-# 🧮 Projeto de Credit Score - Parte 1 - Processamento dos Dados  
-
-> Este projeto representa a **primeira etapa do desenvolvimento de um modelo de Credit Score**, conduzido durante o curso de análise e modelagem de dados.  
-> O objetivo é **preparar e compreender a base de clientes** antes da modelagem, aplicando técnicas de pré-processamento, análise univariada e bivariada, e balanceamento de classes.
-
----
-
-## 🎯 Objetivo do Projeto  
-
-O termo **Credit Score** refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
-
-O objetivo deste projeto é **prever o risco de inadimplência** de clientes com base em atributos demográficos e financeiros, preparando os dados para uma futura modelagem preditiva.
-
-
-## 📂 Estrutura do Projeto  
-
 ```
-
-📁 credit_score_part1/
-│
-├── data/                         # Base de dados original e tratada
-├── img/                          # Gráficos gerados nas análises
-├── notebooks/                    # Notebooks de processamento
-│   └── credit_score_parte1.ipynb
-├── README.md                     # Este arquivo
-└── requirements.txt              # Dependências do projeto
-
-````
-
----
-
-## Dicionário de Dados  
-
-| Variável              | Descrição                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **Age**               | Idade do cliente                                                         |
-| **Income**            | Renda mensal                                                             |
-| **Gender**            | Gênero do cliente                                                        |
-| **Education**         | Nível de escolaridade                                                    |
-| **Marital**           | Estado civil                                                             |
-| **Number of Children**| Quantidade de filhos                                                     |
-| **Home**              | Tipo de residência (alugada ou própria)                                  |
-| **Credit Score**      | Score de crédito (variável-alvo)                                         |
-
----
-
-
 ## 📊 Etapa 2 - Análise Univariada e Bivariada
 
 <details>
