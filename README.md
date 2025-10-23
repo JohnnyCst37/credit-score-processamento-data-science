@@ -226,7 +226,8 @@ print(Counter(y_res))
 
 <p align="center">
   <b>Johnny Sorato Martins Fernandes</b><br>
-  <sub>Consultoria de Negócios | Cientista de Dados| Analista de Dados - JS Fernandes Consultoria Empresarial - Unidade Primavera do Leste</sub><br><br>
+  <sub>Consultoria de Negócios | Cientista de Dados| Analista de Dados - Automação de Processos - SaaS</sub><br><br>
+  <sub> JS Fernandes Consultoria Empresarial - Unidade Primavera do Leste</sub><br><br>
   📧 fernandesjohnnys@gmail.com &nbsp;&nbsp;📞 (66) 99232-1719
 </p>
 
