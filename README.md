@@ -32,7 +32,7 @@
 
 </details>
 
-# 🧮 Projeto de Credit Score - Parte 1 
+# 🧮 Projeto de Credit Score - P1 
 
 > Projeto Credit Score - Parte 1
 Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para compreender o perfil dos clientes e preparar os dados para modelos preditivos de crédito. O foco é criar um pipeline de dados limpo, balanceado e estatisticamente confiável — essencial para análises robustas e machine learning.
@@ -42,13 +42,16 @@ Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para
 
 ### Objetivo
 
-O termo Credit Score refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
+> O termo Credit Score refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
 
-O objetivo deste projeto é prever o risco de inadimplência de clientes com base em atributos demográficos e financeiros, preparando os dados para uma futura modelagem preditiva.
+> O objetivo deste projeto é prever o risco de inadimplência de clientes com base em atributos demográficos e financeiros, preparando os dados para uma futura modelagem preditiva.
 
 ---
 
-### 📂 Estrutura do Projeto  
+### 📂 Estrutura do Projeto 
+<details>
+<summary><b>Exibir Detalhes</b></summary>
+  
 ```markdown
 
 📁 credit_score_part1/
@@ -60,12 +63,12 @@ O objetivo deste projeto é prever o risco de inadimplência de clientes com bas
 ├── README.md                     # Este arquivo
 └── requirements.txt              # Dependências do projeto
 
-
 ````
+</details>
 
-### 🔗Jornada do Projeto
+### 📂 Jornada do Projeto
 <details>
-<summary><b>🔗 Jornada do Projeto</b></summary>
+<summary><b>Exibir Detalhes</b></summary>
 
 ```markdown
 | Etapa                                | Descrição                                                                                                                                                                                                                            |
@@ -80,21 +83,27 @@ O objetivo deste projeto é prever o risco de inadimplência de clientes com bas
 ````
 </details>
 
-### 🧾 Dicionário de Dados  
+### 📂 Dicionário de Dados
+
+<details>
+<summary><b>Exibir Detalhes</b></summary>
+
 ```markdown
 | Variável              | Descrição                                                                 |
 |-----------------------|---------------------------------------------------------------------------|
-| **Age**               | Idade do cliente                                                         |
-| **Income**            | Renda mensal                                                             |
-| **Gender**            | Gênero do cliente                                                        |
-| **Education**         | Nível de escolaridade                                                    |
-| **Marital**           | Estado civil                                                             |
-| **Number of Children**| Quantidade de filhos                                                     |
-| **Home**              | Tipo de residência (alugada ou própria)                                  |
-| **Credit Score**      | Score de crédito (variável-alvo)                                         |
+| Age               | Idade do cliente                                                         |
+| Income            | Renda mensal                                                             |
+| Gender            | Gênero do cliente                                                        |
+| Education         | Nível de escolaridade                                                    |
+| Marital           | Estado civil                                                             |
+| Number of Children| Quantidade de filhos                                                     |
+| Home              | Tipo de residência (alugada ou própria)                                  |
+| Credit Score      | Score de crédito (variável-alvo)                                         |
 
 ````
----
+</details>
+
+
 
 ## Etapa 1 - Pré Processamento  
 
@@ -103,35 +112,44 @@ O objetivo deste projeto é prever o risco de inadimplência de clientes com bas
 - Tratamento de **valores nulos e inconsistentes**, com justificativas documentadas.  
 - Identificação e correção de **valores categóricos incorretos**.  
 
-### 💡 Observação  
-Foi aplicada **normalização** na variável *Income* (Renda), utilizando `MinMaxScaler`, para adequação à modelagem futura.
+### Observação  
+Foi aplicada normalização na variável *Income* (Renda) e *Age*, utilizando `MinMaxScaler`, apenas para adequação de análise bivariada.
 
 ```python
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
-df["Income_Scaled"] = scaler.fit_transform(df[["Income"]])
+df[f'{column_age}_Normalized'] = scaler.fit_transform(df[[column_age]])
+df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ```
-## 📊 Etapa 2 - Análise Univariada e Bivariada
+## Etapa 2 - Análise Univariada e Bivariada
 
 <details>
-<summary><b>📈 Análise Univariada</b></summary>
+<summary><b> 📊 Gráficos de Análise Univariada</b></summary>
 
 ### 🔸 Credit Score (Score de Crédito)
+
+<img src="img/2_Credit_Score.png" width="600"/>
 
 * A maioria dos clientes possui **score "High"**, indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 
 ### 🔸 Age (Idade)
 
+<img src="img/3_Univar_Age_Density.png" width="600"/>
+
 * Distribuição simétrica entre **28 e 45 anos**, mediana ≈ 36.
 * Sem outliers significativos.
 
 ### 🔸 Home Ownership (Tipo de Moradia)
 
+<img src="img/1_Home_Ownership.png" width="600"/>
+
 * Predominância de **casas próprias**, reforçando estabilidade financeira.
 
 ### 🔸 Income (Renda)
+
+<img src="img/4_Univar_Income_Density.png" width="600"/>
 
 * Distribuição **enviesada à direita (skewed right)**.
 * Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
@@ -139,23 +157,36 @@ df["Income_Scaled"] = scaler.fit_transform(df[["Income"]])
 
 </details>
 
----
-
 <details>
-<summary><b>🔗 Análise Bivariada</b></summary>
+<summary><b>Análise Bivariada</b></summary>
 
-| Pergunta                                           | Insight                                            |
+| Pergunta                                           | Resposta                                           |
 | -------------------------------------------------- | -------------------------------------------------- |
 | **Existe relação entre a idade e o status civil?** | Sim. Clientes casados tendem a ser mais velhos.    |
 | **Qual a relação entre score e escolaridade?**     | Maior escolaridade → score mais alto.              |
 | **O salário influencia no score de crédito?**      | Renda maior → tendência a score “High”.            |
 | **Clientes com casa própria têm score mais alto?** | Sim. 98,2% dos proprietários possuem score “High”. |
 
+<img src="img/4_Univar_Income_Density.png" width="600"/>
+
 
 
 </details>
 
 
+## Insight
+
+> [!TIP]
+> Análise Univariada
+> Credit Score (Pontuação de Crédito): Insight: A base de clientes é majoritariamente de baixo risco, com a maior parte dos registros concentrada no score "High". Os scores "Average" e "Low" representam uma fatia menor, indicando que o foco da análise deve ser na diferenciação dos scores "High" e "Average".
+>
+>Age (Idade) Insight: A idade tem uma distribuição simétrica e relativamente concentrada (sem outliers visíveis, conforme a caixa), com a maioria dos clientes entre 28 e 45 anos (aproximadamente Q1 e Q3). A mediana está em torno de 36 anos.
+>
+> Home Ownership (Situação da Moradia) Insight: A maioria dos clientes tem casa própria ("Owned"), superando significativamente aqueles que alugam ("Rented"). Esta é uma característica de estabilidade na base, que se alinha à alta frequência de score "High".
+>
+> Income (Renda/Salário) Gráfico: Histograma de Densidade com Box Plot. Insight Curto: A distribuição da Renda é enviesada positivamente (skewed right). A maioria dos clientes tem renda concentrada entre 40k e 100k, mas há uma longa cauda de alta renda se estendendo além de 160k, o que está visível tanto no histograma quanto na extensão do Box Plot superior. Recomendação: O enviesamento e os outliers na cauda superior justificam a normalização da renda para uso em modelos de Machine Learning (o que você já fez com o MinMaxScaler).
+
+> Não foram encontrados outiliers.
 ### 🧠 Conclusão da Etapa
 
 > A estabilidade financeira e doméstica (renda e moradia própria) são os **principais preditores de baixo risco**.
