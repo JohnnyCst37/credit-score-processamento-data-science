@@ -1,6 +1,6 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=2c7bb6&height=120&section=header"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=31688e&height=120&section=header"/>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=2c7bb6&size=35&center=true&vCenter=true&width=1000&lines=Bem-vindo+à+pré-modelagem+exploratória;Nosso+primeiro+enigma+é+o+Churn;Cada+gráfico+revela+uma+pista+valiosa;Vamos+decifrar+os+dados+juntos)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=31688e&size=35&center=true&vCenter=true&width=1000&lines=Balanço+de+Dados+e+Técnicas+Preditivas;A+base+agora+ganha+equilíbrio+e+significado;Normalização,+codificação+e+amostragem+inteligente;Modelagem+de+alto+desempenho!)](https://git.io/typing-svg)
 
 ---
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
@@ -18,11 +18,11 @@
 
 ## Sumário do Projeto
 
-- [🎯 Objetivo do Projeto](#-objetivo-do-projeto)
-- [🧰 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [🎯 Objetivo](#objetivo)
+- [🔗Jornada do Projeto](#jornada-do-projeto)
 - [📂 Estrutura do Projeto](#-estrutura-do-projeto)
 - [🧾 Dicionário de Dados](#-dicionário-de-dados)
-- [🧩 Etapa 1 — Pré-Processamento](#-etapa-1---pré-processamento)
+- [🧩 Etapa 1 — Pré Processamento](#etapa-1---pré-processamento)
 - [📊 Etapa 2 — Análise Univariada e Bivariada](#-etapa-2---análise-univariada-e-bivariada)
 - [📈 Etapa 3 — Correlação Balanceamento e Codificação](#-etapa-3---correlação-balanceamento-e-codificação)
 - [🧭 Próximos Passos (Parte 2)](#-próximos-passos-parte-2)
@@ -32,14 +32,15 @@
 
 </details>
 
-# 🧮 Projeto de Credit Score - Parte 1 - Processamento dos Dados
+# 🧮 Projeto de Credit Score - Parte 1 
 
-> Este projeto representa a *primeira etapa do desenvolvimento de um modelo de Credit Score*, conduzido durante o curso de análise e modelagem de dados.  
-> O objetivo é *preparar e compreender a base de clientes* antes da modelagem, aplicando técnicas de pré-processamento, análise univariada e bivariada, e balanceamento de classes.
+> Projeto Credit Score - Parte 1
+Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para compreender o perfil dos clientes e preparar os dados para modelos preditivos de crédito. O foco é criar um pipeline de dados limpo, balanceado e estatisticamente confiável — essencial para análises robustas e machine learning.
+> O objetivo é preparar e compreender a base de clientes antes da modelagem, aplicando técnicas de pré-processamento, análise univariada e bivariada, e balanceamento de classes.
 
 ---
 
-## Objetivo do Projeto  
+### Objetivo
 
 O termo Credit Score refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
 
@@ -47,7 +48,7 @@ O objetivo deste projeto é prever o risco de inadimplência de clientes com bas
 
 ---
 
-## 📂 Estrutura do Projeto  
+### 📂 Estrutura do Projeto  
 ```markdown
 
 📁 credit_score_part1/
@@ -59,10 +60,27 @@ O objetivo deste projeto é prever o risco de inadimplência de clientes com bas
 ├── README.md                     # Este arquivo
 └── requirements.txt              # Dependências do projeto
 
+
 ````
 
+### 🔗Jornada do Projeto
+<details>
+<summary><b>🔗 Jornada do Projeto</b></summary>
 
-## 🧾 Dicionário de Dados  
+```markdown
+| Etapa                                | Descrição                                                                                                                                                                                                                            |
+| -------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pré-processamento dos Dados          | Incluiu limpeza, normalização, padronização e verificação de missing values, assegurando consistência e qualidade na base final.                                                                                                       |
+| Análise Univariada                   | Exploramos individualmente cada variável, identificando distribuições, outliers e possíveis inconsistências. Essa etapa permitiu entender o comportamento isolado dos atributos e detectar oportunidades de normalização e limpeza.    |
+| Análise Bivariada                    | Investigamos as relações entre variáveis e o impacto direto sobre o target (bom ou mau pagador), utilizando gráficos e correlações estatísticas. Essa visão comparativa ajudou a identificar os atributos com maior poder explicativo. |
+| Correlação entre Atributos           | Geramos uma matriz de correlação para avaliar multicolinearidades e redundâncias entre variáveis, otimizando a base para modelagem futura e reduzindo ruído informacional.                                                               |
+| Tratamento de Atributos Categóricos  | Variáveis qualitativas foram transformadas por meio de Label Encoding e *One-Hot Encoding, garantindo compatibilidade com algoritmos de machine learning.                                                                           |
+| Balanceamento de Classes             | Aplicamos técnicas de oversampling e undersampling (via `imbalanced-learn`) para corrigir o desbalanceamento entre bons e maus pagadores — passo essencial para evitar viés nos modelos futuros.                                     |
+| Divisão em Base de Treino e Teste    | Finalizamos a preparação dividindo o dataset em bases de treino (80%) e teste (20%), estruturando o pipeline para as próximas fases de modelagem preditiva.                                                                      |
+````
+</details>
+
+### 🧾 Dicionário de Dados  
 ```markdown
 | Variável              | Descrição                                                                 |
 |-----------------------|---------------------------------------------------------------------------|
@@ -78,7 +96,7 @@ O objetivo deste projeto é prever o risco de inadimplência de clientes com bas
 ````
 ---
 
-## Etapa 1 - Pré-Processamento  
+## Etapa 1 - Pré Processamento  
 
 ### 🔹 Ações Realizadas  
 - Verificação de **tipos de dados** e conversões necessárias.  
@@ -203,11 +221,11 @@ print(Counter(y_res))
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 <p align="center">
   <b>Johnny Sorato Martins Fernandes</b><br>
-  <sub>Consultor de Negócios | Cientista de Dados em Formação | Diretor Executivo JS FernandescConsultoria Empresaria - Unidade Primavera do Leste</sub><br><br>
+  <sub>Consultoria de Negócios | Cientista de Dados| Analista de Dados - JS Fernandes Consultoria Empresarial - Unidade Primavera do Leste</sub><br><br>
   📧 fernandesjohnnys@gmail.com &nbsp;&nbsp;📞 (66) 99232-1719
 </p>
 
