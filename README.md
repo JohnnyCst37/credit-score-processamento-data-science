@@ -221,7 +221,7 @@ print(Counter(y_res))
 
 ---
 
-## Autor
+## 👨‍💻 Autor
 
 <p align="center">
   <b>Johnny Sorato Martins Fernandes</b><br>
