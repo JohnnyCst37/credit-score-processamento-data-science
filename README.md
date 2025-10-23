@@ -27,7 +27,7 @@
 - [📈 Etapa 3 — Correlação Balanceamento e Codificação](#-etapa-3---correlação-balanceamento-e-codificação)
 - [🧭 Próximos Passos (Parte 2)](#-próximos-passos-parte-2)
 - [💭 Reflexão Final](#-reflexão-final)
-- [👨‍💻 Autor](#-autor)
+- [👨‍💻Autor](#-autor)
 - [📦 Instalação dos Requisitos](#-instalação-dos-requisitos)
 
 </details>
@@ -221,7 +221,8 @@ print(Counter(y_res))
 
 ---
 
-## 👨‍💻 Autor
+## Autor
+
 
 <p align="center">
   <b>Johnny Sorato Martins Fernandes</b><br>
