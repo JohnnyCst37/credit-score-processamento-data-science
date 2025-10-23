@@ -19,9 +19,9 @@
 ## Sumário do Projeto
 
 - [🎯 Objetivo](#objetivo)
-- [🔗Jornada do Projeto](#jornada-do-projeto)
+- [📂 Jornada do Projeto](#jornada-do-projeto)
 - [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🧾 Dicionário de Dados](#-dicionário-de-dados)
+- [📂 Dicionário de Dados](#-dicionário-de-dados)
 - [🧩 Etapa 1 — Pré Processamento](#etapa-1---pré-processamento)
 - [📊 Etapa 2 — Análise Univariada e Bivariada](#-etapa-2---análise-univariada-e-bivariada)
 - [📈 Etapa 3 — Correlação Balanceamento e Codificação](#-etapa-3---correlação-balanceamento-e-codificação)
@@ -204,12 +204,62 @@ Há uma predominância significativa de pessoas com moradia própria (Owned). A 
 >
 > Income (Renda/Salário) Gráfico: Histograma de Densidade com Box Plot. Insight Curto: A distribuição da Renda é enviesada positivamente (skewed right). A maioria dos clientes tem renda concentrada entre 40k e 100k, mas há uma longa cauda de alta renda se estendendo além de 160k, o que está visível tanto no histograma quanto na extensão do Box Plot superior. Recomendação: O enviesamento e os outliers na cauda superior justificam a normalização da renda para uso em modelos de Machine Learning (o que você já fez com o MinMaxScaler).
 
-> Não foram encontrados outiliers.
+ANÁLISE CENTRAL E COMENTÁRIOS DOS GRÁFICOS
+> [!TIP]
+> A base de clientes demonstra um perfil de baixo risco geral e aponta que a estabilidade financeira e doméstica são os preditores mais fortes para um Credit Score "High".
 
+</details>
+
+<details>
+<summary><b>Análise Preditora</b></summary>
+  
+```markdown
+- Home Ownership vs. Score:
+Insight: Clientes com casa própria ("Owned") são o grupo mais estável, com 98.20% de score "High" e 0% de risco "Low". O grupo "Rented" (Alugados) concentra o maior risco, com aproximadamente 28% de score "Low".
+Fluxo: Home Ownership é um preditor poderoso e deve ser codificado (One-Hot) para a modelagem.
+
+- Faixa de Renda (Income_Bins) vs. Score:
+Insight: Há uma correlação positiva clara. A faixa de renda mais alta concentra a maioria dos scores "High". As faixas de renda média-baixa têm uma mistura maior de "Average" e "Low" Score, indicando maior risco.
+Fluxo: Manter a variável Income para a modelagem. A variável Income_Bins deve ser usada como categórica (Label ou One-Hot).
+
+- Escolaridade vs. Score:
+Insight: Grau avançado (Master/Doctorate) se correlaciona com score "High". No entanto, o risco ("Average" e "Low") é mais evidente nos níveis mais baixos de escolaridade (High School Diploma/Associate Degree).
+Fluxo: Education é um forte preditor ordinal. Deve ser codificado (Label Encoding) para respeitar a hierarquia dos graus.
+
+- Idade (Age):
+Insight: A distribuição da idade é relativamente simétrica e concentrada. O Box Plot sugere que o grupo "Married" tende a ter idades medianas mais altas que o grupo "Single".
+Fluxo: Age será usado como preditor linear, mas sua influência deve ser analisada em conjunto com Marital Status e Income.
+```
+</details>
+
+### Conclusão da Etapa
+
+> A estabilidade financeira e doméstica (renda e moradia própria) são os *principais preditores de baixo risco*.
+
+
+## Etapa 3: Preparação para Modelagem
+
+</details>
+
+<details>
+<summary><b>Detalhamento do processo</b></summary>
+
+1. Correlação Inicial: Verificar o Heatmap de correlação entre Age, Income e Number of Children.
+Codificação Categórica:
+
+2. One-Hot Encoding para colunas nominais (Gender, Home Ownership, Marital Status).
+
+3. Codificação Ordinal para Education.
+
+4. Correlação Completa: Replotar a correlação para ver o impacto das variáveis codificadas na variável alvo (Credit Score).
+
+5. Divisão: Separar a base em treino e teste (70/30) usando estratificação (stratify=y).
+
+6. Balanceamento: O Credit Score está desbalanceado (predomínio de "High"). Aplicar SMOTE (ou técnica similar) APENAS na base de treino para equalizar as classes de risco ("Low" e "Average").
  
-### 🧠 Conclusão da Etapa
+</details>
+ 
 
-> A estabilidade financeira e doméstica (renda e moradia própria) são os **principais preditores de baixo risco**.
 
 ---
 
