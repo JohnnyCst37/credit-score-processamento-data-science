@@ -131,21 +131,21 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 <img src="img/2_Credit_Score.png" width="600"/>
 
-* A maioria dos clientes possui **score "High"**, indicando perfil de baixo risco.
+* A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 
 ### 🔸 Age (Idade)
 
 <img src="img/3_Univar_Age_Density.png" width="600"/>
 
-* Distribuição simétrica entre **28 e 45 anos**, mediana ≈ 36.
+* Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
 * Sem outliers significativos.
 
 ### 🔸 Home Ownership (Tipo de Moradia)
 
 <img src="img/1_Home_Ownership.png" width="600"/>
 
-* Predominância de **casas próprias**, reforçando estabilidade financeira.
+* Predominância de casas próprias, reforçando estabilidade financeira.
 
 ### 🔸 Income (Renda)
 
@@ -158,20 +158,38 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 </details>
 
 <details>
-<summary><b>Análise Bivariada</b></summary>
+<summary><b>📊 Gráficos de Análise Bivariada</b></summary>
 
-| Pergunta                                           | Resposta                                           |
+<img src="img/5_Bivar_Age_vs_MaritalStatus.png" width="600"/>
+
+* A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos. As extremidades do gráfico (idades mais jovens e mais velhas) possuem menor representatividade.
+
+<img src="img/6_Bivar_Education_vs_Score.png" width="600"/>
+
+* O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados. A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate"), indicando uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
+
+<img src="img/7_Bivar_Age_vs_Income_Normalized.png" width="600"/>
+
+* Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros. As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada, conforme indicado pela linha de regressão mais elevada.
+
+<img src="img/8_Bivar_IncomeBins_vs_Score.png" width="600"/>
+
+* O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada), indicando uma forte correlação positiva entre alta renda e melhor pontuação de crédito. Por outro lado, as pontuações "Low" (vermelho) e "Average" (laranja) são mais concentradas nas faixas de renda mais baixas.
+
+
+
+<img src="img/9_Bivar_HomeOwnership_vs_Score.png" width="600"/>
+
+Há uma predominância significativa de pessoas com moradia própria (Owned). A proporção de Credit Score "High" é esmagadora para quem possui casa própria, enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia alugada (Rented).
+
+</details>
+
+| Perguntas                                           | Respostas                                          |
 | -------------------------------------------------- | -------------------------------------------------- |
 | **Existe relação entre a idade e o status civil?** | Sim. Clientes casados tendem a ser mais velhos.    |
 | **Qual a relação entre score e escolaridade?**     | Maior escolaridade → score mais alto.              |
 | **O salário influencia no score de crédito?**      | Renda maior → tendência a score “High”.            |
 | **Clientes com casa própria têm score mais alto?** | Sim. 98,2% dos proprietários possuem score “High”. |
-
-<img src="img/4_Univar_Income_Density.png" width="600"/>
-
-
-
-</details>
 
 
 ## Insight
@@ -187,6 +205,8 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 > Income (Renda/Salário) Gráfico: Histograma de Densidade com Box Plot. Insight Curto: A distribuição da Renda é enviesada positivamente (skewed right). A maioria dos clientes tem renda concentrada entre 40k e 100k, mas há uma longa cauda de alta renda se estendendo além de 160k, o que está visível tanto no histograma quanto na extensão do Box Plot superior. Recomendação: O enviesamento e os outliers na cauda superior justificam a normalização da renda para uso em modelos de Machine Learning (o que você já fez com o MinMaxScaler).
 
 > Não foram encontrados outiliers.
+
+ 
 ### 🧠 Conclusão da Etapa
 
 > A estabilidade financeira e doméstica (renda e moradia própria) são os **principais preditores de baixo risco**.
