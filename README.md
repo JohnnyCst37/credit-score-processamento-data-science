@@ -129,22 +129,21 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### 🔸 Credit Score (Score de Crédito)
 
-<img src="img/2_Univar_Credit_Score_Distribution.png" width="600"/>
+<img src="img/2_univar_credit_score_distribution.png" width="600"/>
 
 * A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 
 ### 🔸 Age (Idade)
 
-<img src="img/3_Univar_Age_Density.png" width="600"/>
+<img src="img/3_univar_age_density.png" width="600"/>
 
-https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/3_Univar_Age_Density.png
 * Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
 * Sem outliers significativos.
 
 ### 🔸 Home Ownership (Tipo de Moradia)
 
-<img src="img/1_Univar_Home_Ownership_Proportion.png" width="600"/>
+<img src="img/1_univar_home_ownership_proportion.png" width="600"/>
 
 
 https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/1_Univar_Home_Ownership_Proportion.png
@@ -152,10 +151,8 @@ https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main
 
 ### 🔸 Income (Renda)
 
-<img src="img/4_Univar_Income_Density.png" width="600"/>
+<img src="img/4_univar_income_density.png" width="600"/>
 
-
-https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/4_Univar_Income_Density.png
 * Distribuição **enviesada à direita (skewed right)**.
 * Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
 * Recomendação: **normalização ou transformação logarítmica** para uso em modelos ML.
@@ -167,14 +164,9 @@ https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main
 
 <img src="img/5_bivar_age_vs_maritalstatus.png" width="600"/>
 
-https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/5_Bivar_Age_vs_MaritalStatus.png
-
-
 * A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos. As extremidades do gráfico (idades mais jovens e mais velhas) possuem menor representatividade.
 
 <img src="img/6_bivar_education_vs_score.png" width="600"/>
-
-https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/6_Bivar_Education_vs_Score.png
 
 * O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados. A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate"), indicando uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
 
