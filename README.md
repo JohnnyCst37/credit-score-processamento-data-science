@@ -176,14 +176,14 @@ https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main
 
 * Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros. As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada, conforme indicado pela linha de regressão mais elevada.
 
-<img src="img/8_bivar_incomebins_vs_score.png" width="600"/>
+<img src="img/8_bivar_income_vs_score.png" width="600"/>
 
 https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/8_Bivar_IncomeBins_vs_Score.png
 
 * O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada), indicando uma forte correlação positiva entre alta renda e melhor pontuação de crédito. Por outro lado, as pontuações "Low" (vermelho) e "Average" (laranja) são mais concentradas nas faixas de renda mais baixas.
 
 
-<img src="img/9_Bivar_HomeOwnership_vs_Score.png" width="600"/>
+<img src="img/9_bivar_Homeownership_vs_score.png" width="600"/>
 
 https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/9_Bivar_HomeOwnership_vs_Score.png
 
