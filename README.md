@@ -127,56 +127,62 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### 🔸 Credit Score (Score de Crédito)
 
-<img src="img/2_univar_credit_score_distribution.png" width="600"/>
+
+<img src="img/2_univar_credit_score_distribution.png" width="400"/>
+
 
 * A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 
+
 ### Age (Idade)
 
-<img src="img/univar_age_density.png" width="400"/>
+ <img src="img/univar_age_density.png" width="400"/>
 
 
 
 * Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
 * Sem outliers significativos.
+ 
 
 ### 🔸 Home Ownership (Tipo de Moradia)
 
- <img src="img/1_univar_home_ownership_proportion.png" width="600"/>
-
+ <img src="img/1_univar_home_ownership_proportion.png" width="400"/>
 
 
 * Predominância de casas próprias, reforçando estabilidade financeira.
 
 ### 🔸 Income (Renda)
 
-  <img src="img/4_univar_income_density.png" width="600"/>
+  <img src="img/4_univar_income_density.png" width="400"/>
 
 * Distribuição **enviesada à direita (skewed right)**.
 * Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
 * Recomendação: **normalização ou transformação logarítmica** para uso em modelos ML.
+
+
+
 
 </details>
 
 <details>
 <summary><b>📊 Gráficos de Análise Bivariada</b></summary>
 
-<img src="img/5_bivar_age_vs_maritalstatus.png" width="600"/>
+<img src="img/5_bivar_age_vs_maritalstatus.png" width="500"/>
 
 * A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos. As extremidades do gráfico (idades mais jovens e mais velhas) possuem menor representatividade.
 
-<img src="img/6_bivar_education_vs_score.png" width="600"/>
+<img src="img/6_bivar_education_vs_score.png" width="500"/>
 
 * O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados. A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate"), indicando uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
 
-<img src="img/7_bivar_age_vs_income_normalized.png" width="600"/>
+<img src="img/7_bivar_age_vs_income_normalized.png" width="500"/>
 
 https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/7_Bivar_Age_vs_Income_Normalized.png
 
 * Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros. As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada, conforme indicado pela linha de regressão mais elevada.
 
-<img src="img/8_bivar_income_vs_score.png" width="600"/>
+<img src="img/8_bivar_income_vs_score.png" width="500"/>
 
 https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/8_Bivar_IncomeBins_vs_Score.png
 
