@@ -132,9 +132,11 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 * A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 
-### 🔸 Age (Idade)
+### Age (Idade)
 
-<img src="img/3_univar_age_density.png" width="600"/>
+<img src="img/univar_age_density.png" width="400"/>
+
+
 
 * Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
 * Sem outliers significativos.
