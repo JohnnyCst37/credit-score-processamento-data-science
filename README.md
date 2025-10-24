@@ -122,76 +122,88 @@ df[f'{column_age}_Normalized'] = scaler.fit_transform(df[[column_age]])
 df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ```
+
 ## Etapa 2 - Análise Univariada e Bivariada
 
 
 ### Credit Score (Score de Crédito)
 
 
-<img src="img/2_univar_credit_score_distribution.png" width="400"/>
+
+<img src="img/2_univar_credit_score_distribution.png" width="600"/>
+
 
 ```markdown
 * A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 ```
 
+
 ### Age (Idade)
 
- <img src="img/univar_age_density.png" width="400"/>
+
+ <img src="img/univar_age_density.png" width="600"/>
 
 
-
-* Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
-* Sem outliers significativos.
+- Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
+- Sem outliers significativos.
  
 
 ### Home Ownership (Tipo de Moradia)
 
- <img src="img/1_univar_home_ownership_proportion.png" width="400"/>
+ <img src="img/1_univar_home_ownership_proportion.png" width="600"/>
 
 
-* Predominância de casas próprias, reforçando estabilidade financeira.
+- Predominância de casas próprias, reforçando estabilidade financeira.
 
 ### Income (Renda)
 
-  <img src="img/4_univar_income_density.png" width="400"/>
+  <img src="img/4_univar_income_density.png" width="600"/>
 
-* Distribuição **enviesada à direita (skewed right)**.
-* Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
-* Recomendação: **normalização ou transformação logarítmica** para uso em modelos ML.
-
-
-### fd
+- Distribuição **enviesada à direita (skewed right)**.
+- Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
+- Recomendação: **normalização ou transformação logarítmica** para uso em modelos ML.
 
 
- <img src="img/img/bivar_age_vs_marital.png" width="300"/>
+### Age vs Marital Status
+
+<img src="img/img/bivar_age_vs_marital.png" width="600"/>
  
 ```markdown
 * A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos.
 * As extremidades do gráfico (idades mais jovens e mais velhas) possuem menor representatividade.
 ```
+### Education vs Score Credit
 
-<img src="img/6_bivar_education_vs_score.png" width="400"/>
+<img src="img/6_bivar_education_vs_score.png" width="600"/>
 
-* O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
-* A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate"), indicando uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
+- O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
+-  A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate").
+-  Isto indica uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
 
-<img src="img/7_bivar_age_vs_income_normalized.png" width="540"/>
-
-
-* Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros. As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada, conforme indicado pela linha de regressão mais elevada.
+### Age vs Icome Norm
 
 
-<img src="img/8_bivar_income_vs_score.png" width="400"/>
+<img src="img/7_bivar_age_vs_income_normalized.png" width="600"/>
+
+
+- Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros.
+- As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada, conforme indicado pela linha de regressão mais elevada.
+
+### Income vs Credit Score
+
+<img src="img/8_bivar_income_vs_score.png" width="600"/>
  
 
-* O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada), indicando uma forte correlação positiva entre alta renda e melhor pontuação de crédito. Por outro lado, as pontuações "Low" (vermelho) e "Average" (laranja) são mais concentradas nas faixas de renda mais baixas.
+- O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada).
+- Isto indica uma forte correlação positiva entre alta renda e melhor pontuação de crédito. Por outro lado, as pontuações "Low" (vermelho) e "Average" (laranja) são mais concentradas nas faixas de renda mais baixas.
 
+### Homeownership vs Score
 
 <img src="img/9_bivar_homeownership_vs_score.png" width="400"/>
 
-Há uma predominância significativa de pessoas com moradia própria (Owned). A proporção de Credit Score "High" é esmagadora para quem possui casa própria, enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia alugada (Rented).
-
+- Há uma predominância significativa de pessoas com moradia própria (Owned). 
+- A proporção de Credit Score "High" é esmagadora para quem possui casa própria, enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia alugada (Rented).
 
 
 | Perguntas                                           | Respostas                                          |
