@@ -163,7 +163,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### fd
 
- <img src="img/5_bivar_age_vs_baritalstatus.png" width="500"/>
+   <img src="img/img/bivar_age_vs_marital.png" width="300"/>
  
 
 * A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos.
