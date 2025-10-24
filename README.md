@@ -129,7 +129,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### 🔸 Credit Score (Score de Crédito)
 
-<img src="img/2_Univar_Credit_Score_Distribution.png" width="600"/>
+<img src="img/2_Univar_Credit_Score_Distribution.png" width="300"/>
 
 * A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
