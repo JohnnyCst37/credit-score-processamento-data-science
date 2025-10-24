@@ -124,8 +124,6 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 ```
 ## Etapa 2 - Análise Univariada e Bivariada
 
-<details>
-<summary><b> 📊 Gráficos de Análise Univariada</b></summary>
 
 ### 🔸 Credit Score (Score de Crédito)
 
@@ -143,15 +141,15 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### 🔸 Home Ownership (Tipo de Moradia)
 
-<img src="img/1_univar_home_ownership_proportion.png" width="600"/>
+ <img src="img/1_univar_home_ownership_proportion.png" width="600"/>
 
 
-https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/1_Univar_Home_Ownership_Proportion.png
+
 * Predominância de casas próprias, reforçando estabilidade financeira.
 
 ### 🔸 Income (Renda)
 
-<img src="img/4_univar_income_density.png" width="600"/>
+  <img src="img/4_univar_income_density.png" width="600"/>
 
 * Distribuição **enviesada à direita (skewed right)**.
 * Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
