@@ -129,7 +129,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### 🔸 Credit Score (Score de Crédito)
 
-<img src="img/2_Univar_Credit_Score_Distribution.png" width="300"/>
+<img src="img/2_Univar_Credit_Score_Distribution.png" width="600"/>
 
 * A maioria dos clientes possui score "High", indicando perfil de baixo risco.
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
@@ -160,7 +160,9 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 <details>
 <summary><b>📊 Gráficos de Análise Bivariada</b></summary>
 
-<img src="img/5_Bivar_Age_vs_MaritalStatus.png" width="600"/>
+<img src="img/5_Bivar_Age_vs_MaritalStatus.png" width="500"/>
+
+https://github.com/JohnnyCst37/credit-score-processamento-data-science/blob/main/img/5_Bivar_Age_vs_MaritalStatus.png
 
 * A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos. As extremidades do gráfico (idades mais jovens e mais velhas) possuem menor representatividade.
 
