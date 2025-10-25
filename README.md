@@ -127,10 +127,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 
 ### Credit Score (Score de Crédito)
-
-
-
-<img src="img/2_univar_credit_score_distribution.png" width="600"/>
+<img src="img/2_univar_credit_score_distribution.png" width="400"/>
 
 
 ```markdown
@@ -151,14 +148,14 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Home Ownership (Tipo de Moradia)
 
- <img src="img/1_univar_home_ownership_proportion.png" width="600"/>
+ <img src="img/1_univar_home_ownership_proportion.png" width="400"/>
 
 
 - Predominância de casas próprias, reforçando estabilidade financeira.
 
 ### Income (Renda)
 
-  <img src="img/4_univar_income_density.png" width="600"/>
+  <img src="img/4_univar_income_density.png" width="400"/>
 
 - Distribuição **enviesada à direita (skewed right)**.
 - Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
@@ -167,7 +164,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Age vs Marital Status
 
-<img src="img/img/bivar_age_vs_marital.png" width="600"/>
+<img src="img/img/bivar_age_vs_marital.png" width="400"/>
  
 ```markdown
 * A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos.
@@ -175,7 +172,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 ```
 ### Education vs Score Credit
 
-<img src="img/6_bivar_education_vs_score.png" width="600"/>
+<img src="img/6_bivar_education_vs_score.png" width="400"/>
 
 - O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
 -  A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate").
@@ -184,7 +181,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 ### Age vs Icome Norm
 
 
-<img src="img/7_bivar_age_vs_income_normalized.png" width="600"/>
+<img src="img/7_bivar_age_vs_income_normalized.png" width="400"/>
 
 
 - Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros.
@@ -192,7 +189,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Income vs Credit Score
 
-<img src="img/8_bivar_income_vs_score.png" width="600"/>
+<img src="img/8_bivar_income_vs_score.png" width="400"/>
  
 
 - O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada).
@@ -236,6 +233,7 @@ ANÁLISE CENTRAL E COMENTÁRIOS DOS GRÁFICOS
 <summary><b>Análise Preditora</b></summary>
   
 ```markdown
+
 - Home Ownership vs. Score:
 Insight: Clientes com casa própria ("Owned") são o grupo mais estável, com 98.20% de score "High" e 0% de risco "Low". O grupo "Rented" (Alugados) concentra o maior risco, com aproximadamente 28% de score "Low".
 Fluxo: Home Ownership é um preditor poderoso e deve ser codificado (One-Hot) para a modelagem.
@@ -251,6 +249,7 @@ Fluxo: Education é um forte preditor ordinal. Deve ser codificado (Label Encodi
 - Idade (Age):
 Insight: A distribuição da idade é relativamente simétrica e concentrada. O Box Plot sugere que o grupo "Married" tende a ter idades medianas mais altas que o grupo "Single".
 Fluxo: Age será usado como preditor linear, mas sua influência deve ser analisada em conjunto com Marital Status e Income.
+
 ```
 </details>
 
@@ -287,18 +286,18 @@ Codificação Categórica:
 
 ## 📈 Etapa 3 - Correlação, Balanceamento e Codificação
 
-### 🔹 Correlação Numérica
+### Correlação Numérica
 
 A relação entre **Age** e **Income** apresentou correlação média-alta (≈ 0.69).
 
 > 💬 Justificativa: o aumento da idade reflete progressão profissional e aumento da renda — padrão esperado em bases financeiras.
 
-### 🔹 Codificação Categórica
+### Codificação Categórica
 
 * **One-Hot Encoding:** Gender, Home Ownership, Marital Status
 * **Label Encoding:** Education
 
-### 🔹 Balanceamento das Classes
+### Balanceamento das Classes
 
 A variável *Credit Score* estava **desbalanceada**:
 
