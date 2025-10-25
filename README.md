@@ -34,17 +34,18 @@
 
 # 🧮 Projeto de Credit Score - P1 
 
-> Projeto Credit Score - Parte 1
-Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para compreender o perfil dos clientes e preparar os dados para modelos preditivos de crédito. O foco é criar um pipeline de dados limpo, balanceado e estatisticamente confiável — essencial para análises robustas e machine learning.
-> O objetivo é preparar e compreender a base de clientes antes da modelagem, aplicando técnicas de pré-processamento, análise univariada e bivariada, e balanceamento de classes.
+> [!IMPORTANT]
+> 
+> 
+>  A Análise Exploratória de Dados (EDA) é o alicerce de tudo, exigindo um olhar micro e macro. É nela que aplicamos as técnicas essenciais: da limpeza de dados e correlação de Pearson >  >  para mapear padrões, à aplicação do SMOTE para balancear o target, e a correta separação em tabela Treino e Teste. Este processamento robusto revela padrões e constrói a fundação sólida >  necessária para qualquer decisão inteligente.
+>  Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para compreender o perfil dos clientes e preparar os dados para modelos preditivos de crédito. O foco é criar > >  um pipeline de dados limpo, balanceado e estatisticamente confiável — essencial para análises robustas e machine learning.
 
----
-
-### Objetivo
-
-> O termo Credit Score refere-se a uma pontuação numérica que indica a credibilidade de um indivíduo em relação ao cumprimento de suas obrigações financeiras — como empréstimos e cartões de crédito.  
-
-> O objetivo deste projeto é prever o risco de inadimplência de clientes com base em atributos demográficos e financeiros, preparando os dados para uma futura modelagem preditiva.
+````
+> O objetivo é preparar e compreender a base de clientes antes da modelagem, aplicando técnicas de:
+-  pré-processamento,
+-  análise univariada e bivariada,
+- e balanceamento de classes.
+````
 
 ---
 
@@ -54,14 +55,16 @@ Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para
   
 ```markdown
 
-📁 credit_score_part1/
+Projeto_01-Credit_score/
 │
-├── data/                         # Base de dados original e tratada
-├── img/                          # Gráficos gerados nas análises
-├── notebooks/                    # Notebooks de processamento
+├── data/
+├── html/
+├── img/
+├── notebook/
 │   └── credit_score_parte1.ipynb
-├── README.md                     # Este arquivo
-└── requirements.txt              # Dependências do projeto
+├── README.md
+└── requirements.txt
+
 
 ````
 </details>
@@ -71,15 +74,15 @@ Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para
 <summary><b>Exibir Detalhes</b></summary>
 
 ```markdown
-| Etapa                                | Descrição                                                                                                                                                                                                                            |
-| -------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Pré-processamento dos Dados          | Incluiu limpeza, normalização, padronização e verificação de missing values, assegurando consistência e qualidade na base final.                                                                                                       |
-| Análise Univariada                   | Exploramos individualmente cada variável, identificando distribuições, outliers e possíveis inconsistências. Essa etapa permitiu entender o comportamento isolado dos atributos e detectar oportunidades de normalização e limpeza.    |
+| Etapa                                | Descrição                                                                                                                                                                                                                              |
+| -------------------------------------| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pré-processamento dos Dados          | Incluiu limpeza, normalização, padronização e verificação de missing values, assegurando consistência e qualidade na base final.                                                                                                        |
+| Análise Univariada                   | Exploramos individualmente cada variável, identificando distribuições, outliers e possíveis inconsistências. Essa etapa permitiu entender o comportamento isolado dos atributos e detectar oportunidades de normalização e limpeza.  |
 | Análise Bivariada                    | Investigamos as relações entre variáveis e o impacto direto sobre o target (bom ou mau pagador), utilizando gráficos e correlações estatísticas. Essa visão comparativa ajudou a identificar os atributos com maior poder explicativo. |
-| Correlação entre Atributos           | Geramos uma matriz de correlação para avaliar multicolinearidades e redundâncias entre variáveis, otimizando a base para modelagem futura e reduzindo ruído informacional.                                                               |
-| Tratamento de Atributos Categóricos  | Variáveis qualitativas foram transformadas por meio de Label Encoding e *One-Hot Encoding, garantindo compatibilidade com algoritmos de machine learning.                                                                           |
+| Correlação entre Atributos           | Geramos uma matriz de correlação para avaliar multicolinearidades e redundâncias entre variáveis, otimizando a base para modelagem futura e reduzindo ruído informacional.                                                             |
+| Tratamento de Atributos Categóricos  | Variáveis qualitativas foram transformadas por meio de Label Encoding e *One-Hot Encoding, garantindo compatibilidade com algoritmos de machine learning.                                                                              |
 | Balanceamento de Classes             | Aplicamos técnicas de oversampling e undersampling (via `imbalanced-learn`) para corrigir o desbalanceamento entre bons e maus pagadores — passo essencial para evitar viés nos modelos futuros.                                     |
-| Divisão em Base de Treino e Teste    | Finalizamos a preparação dividindo o dataset em bases de treino (80%) e teste (20%), estruturando o pipeline para as próximas fases de modelagem preditiva.                                                                      |
+| Divisão em Base de Treino e Teste    | Finalizamos a preparação dividindo o dataset em bases de treino (80%) e teste (20%), estruturando o pipeline para as próximas fases de modelagem preditiva.                                                                            |
 ````
 </details>
 
@@ -89,8 +92,8 @@ Nesta primeira etapa do projeto Credit Score, construímos uma base sólida para
 <summary><b>Exibir Detalhes</b></summary>
 
 ```markdown
-| Variável              | Descrição                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
+| Variável            Descrição                                                                |
+|----------------------------------------------------------------------------------------------|
 | Age               | Idade do cliente                                                         |
 | Income            | Renda mensal                                                             |
 | Gender            | Gênero do cliente                                                        |
@@ -125,9 +128,11 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ## Etapa 2 - Análise Univariada e Bivariada
 
+### Gráficos de Análise Exploratória (EDA)
 
 ### Credit Score (Score de Crédito)
-<img src="img/2_univar_credit_score_distribution.png" width="400"/>
+
+ <img src="img/2_univar_credit_score_distribution.png" alt="Distribuição de Socore de crédito." width="600"/>
 
 
 ```markdown
@@ -135,73 +140,93 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 * Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
 ```
 
+### Distribuição de Propriedade de Imóvel
 
-### Age (Idade)
+ <img src="img/1_univar_home_ownership_proportion.png" alt="Proporção de tipos de propriedade de imóvel." width="600"/>
+
+```markdown
+- Predominância de casas próprias, reforçando estabilidade financeira.
+```
 
 
- <img src="img/univar_age_density.png" width="600"/>
+### Distribuição do Score de Crédito
 
+ <img src="img/2_univar_credit_score_distribution.png" alt="Distribuição do Credit Score." width="600"/>
 
+```markdown
+* A maioria dos clientes possui score "High", indicando perfil de baixo risco.
+* Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
+```
+
+### Densidade de Idade
+
+ <img src="img/3_univar_age_density.png" alt="Distribuição de densidade da idade." width="600"/>
+
+```markdown
 - Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
 - Sem outliers significativos.
- 
+```
 
-### Home Ownership (Tipo de Moradia)
+### Densidade de Renda
 
- <img src="img/1_univar_home_ownership_proportion.png" width="400"/>
+ <img src="img/4_univar_income_density.png" alt="Distribuição de densidade da renda." width="600"/>
 
-
-- Predominância de casas próprias, reforçando estabilidade financeira.
-
-### Income (Renda)
-
-  <img src="img/4_univar_income_density.png" width="400"/>
-
-- Distribuição **enviesada à direita (skewed right)**.
+```markdown- Distribuição enviesada à direita (skewed right).
 - Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
 - Recomendação: **normalização ou transformação logarítmica** para uso em modelos ML.
-
-
-### Age vs Marital Status
-
-<img src="img/img/bivar_age_vs_marital.png" width="400"/>
- 
-```markdown
-* A distribuição de idade no conjunto de dados está centrada principalmente na faixa entre 35 e 45 anos, com o pico na categoria dos 40 anos.
-* As extremidades do gráfico (idades mais jovens e mais velhas) possuem menor representatividade.
 ```
-### Education vs Score Credit
 
-<img src="img/6_bivar_education_vs_score.png" width="400"/>
+## Análise Bivariada e Central
 
+### Idade vs. Estado Civil
+
+ <img src="img/5_bivar_age_vs_baritalstatus.png" alt="Idade vs. Estado Civil." width="600"/>
+
+```markdown
+- A maior concentração de clientes Single (Solteiro) ocorre nas faixas etárias mais jovens (entre 25 e 40 anos).
+- A categoria Married (Casado) mostra uma distribuição mais ampla, com maior frequência nas faixas etárias intermediárias e mais velhas (a partir dos 35 anos).
+```
+
+### Nível de Educação vs. Score de Crédito
+
+ <img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="600"/>
+
+```
 - O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
 -  A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate").
 -  Isto indica uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
+```
 
-### Age vs Icome Norm
+### Idade vs. Renda Normalizada
 
+ <img src="img/7_bivar_age_vs_income_normalized.png" alt="Idade vs. Renda Normalizada." width="600"/>
 
-<img src="img/7_bivar_age_vs_income_normalized.png" width="400"/>
-
-
+```
 - Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros.
-- As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada, conforme indicado pela linha de regressão mais elevada.
+- As mulheres (Female) tendem a apresentar uma renda harmonizada ligeiramente superior aos homens (Male) na mesma faixa de idade normalizada,
+conforme indicado pela linha de regressão mais elevada.
+```
 
-### Income vs Credit Score
+### Renda vs. Score de Crédito
 
-<img src="img/8_bivar_income_vs_score.png" width="400"/>
- 
+ <img src="img/8_bivar_income_vs_score.png" alt="Renda vs. Score de Crédito." width="600"/>
 
+```
 - O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada).
-- Isto indica uma forte correlação positiva entre alta renda e melhor pontuação de crédito. Por outro lado, as pontuações "Low" (vermelho) e "Average" (laranja) são mais concentradas nas faixas de renda mais baixas.
+- Isto indica uma forte correlação positiva entre alta renda e melhor pontuação de crédito.
+- Por outro lado, as pontuações "Low" (vermelho) e "Average" (laranja) são mais concentradas nas faixas de renda mais baixas.
+```
 
-### Homeownership vs Score
+### Propriedade de Imóvel vs. Score de Crédito
 
-<img src="img/9_bivar_homeownership_vs_score.png" width="400"/>
+ <img src="img/9_bivar_homeownership_vs_score.png" alt="Propriedade de Imóvel vs. Score de Crédito." width="600"/>
 
+
+````
 - Há uma predominância significativa de pessoas com moradia própria (Owned). 
-- A proporção de Credit Score "High" é esmagadora para quem possui casa própria, enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia alugada (Rented).
-
+- A proporção de Credit Score "High" é esmagadora para quem possui casa própria,
+enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia alugada (Rented).
+````
 
 | Perguntas                                           | Respostas                                          |
 | -------------------------------------------------- | -------------------------------------------------- |
@@ -211,21 +236,41 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 | **Clientes com casa própria têm score mais alto?** | Sim. 98,2% dos proprietários possuem score “High”. |
 
 
-## Insight
+## 3. Análise Adicional e Target
 
-> [!TIP]
-> Análise Univariada
-> Credit Score (Pontuação de Crédito): Insight: A base de clientes é majoritariamente de baixo risco, com a maior parte dos registros concentrada no score "High". Os scores "Average" e "Low" representam uma fatia menor, indicando que o foco da análise deve ser na diferenciação dos scores "High" e "Average".
->
->Age (Idade) Insight: A idade tem uma distribuição simétrica e relativamente concentrada (sem outliers visíveis, conforme a caixa), com a maioria dos clientes entre 28 e 45 anos (aproximadamente Q1 e Q3). A mediana está em torno de 36 anos.
->
-> Home Ownership (Situação da Moradia) Insight: A maioria dos clientes tem casa própria ("Owned"), superando significativamente aqueles que alugam ("Rented"). Esta é uma característica de estabilidade na base, que se alinha à alta frequência de score "High".
->
-> Income (Renda/Salário) Gráfico: Histograma de Densidade com Box Plot. Insight Curto: A distribuição da Renda é enviesada positivamente (skewed right). A maioria dos clientes tem renda concentrada entre 40k e 100k, mas há uma longa cauda de alta renda se estendendo além de 160k, o que está visível tanto no histograma quanto na extensão do Box Plot superior. Recomendação: O enviesamento e os outliers na cauda superior justificam a normalização da renda para uso em modelos de Machine Learning (o que você já fez com o MinMaxScaler).
+### Crianças vs. Score de Crédito
 
-ANÁLISE CENTRAL E COMENTÁRIOS DOS GRÁFICOS
-> [!TIP]
+<img src="img/10_children_vs_score.png" alt="Crianças vs. Score de Crédito." width="600"/>
+
+````
+- Clientes sem filhos (0) ou com 1 filho representam a maior parte da amostra.
+- O Score de Crédito **High** (Alto) é predominante para clientes com 0 e 1 filho, indicando uma possível correlação negativa entre o número de filhos e a probabilidade de ter um score baixo.
+````
+
+### Gênero vs. Score de Crédito
+
+<img src="img/11_gender_vs_score.png" alt="Gênero vs. Score de Crédito." width="600"/>
+
+````
+- A proporção de clientes por gênero (Masculino e Feminino) é bastante equilibrada na amostra.
+- Em ambos os gêneros, o Score de Crédito High (Alto) é a categoria mais frequente.
+- Clientes do gênero **Masculino** parecem ter uma leve vantagem na proporção de Score Alto em comparação com o Feminino.
+````
+
+### Estado Civil vs. Score de Crédito
+
+<img src="img/12_maritalstatus_vs_score.png" alt="Estado Civil vs. Score de Crédito." width="600"/>
+
+````
+- A categoria Married (Casado) tem uma predominância esmagadora de Score de Crédito High (Alto).
+- Clientes Single (Solteiro) apresentam uma distribuição mais equilibrada entre as categorias de score, incluindo proporções significativas de scores Average (Médio) e Low (Baixo).
+````
+---
+> [!IMPORTANT]
+> Paracer da análise Central e Preditora:
+> 
 > A base de clientes demonstra um perfil de baixo risco geral e aponta que a estabilidade financeira e doméstica são os preditores mais fortes para um Credit Score "High".
+
 
 </details>
 
@@ -253,10 +298,7 @@ Fluxo: Age será usado como preditor linear, mas sua influência deve ser analis
 ```
 </details>
 
-### Conclusão da Etapa
-
-> A estabilidade financeira e doméstica (renda e moradia própria) são os *principais preditores de baixo risco*.
-
+---
 
 ## Etapa 3: Preparação para Modelagem
 
@@ -282,24 +324,56 @@ Codificação Categórica:
  
 
 
----
-
 ## 📈 Etapa 3 - Correlação, Balanceamento e Codificação
 
-### Correlação Numérica
 
-A relação entre **Age** e **Income** apresentou correlação média-alta (≈ 0.69).
+### Balanceamento de Target Combinado
 
-> 💬 Justificativa: o aumento da idade reflete progressão profissional e aumento da renda — padrão esperado em bases financeiras.
+<img src="img/12_13_balanceamento_target_combinado.png" alt="Gráfico de Balanceamento de Target Combinado." width="600"/>
 
-### Codificação Categórica
+````
+- Antes do SMOTE: O target é altamente desbalanceado, com a categoria High (Alto) dominando (Contagem).
+- Após o SMOTE: O balanceamento (Proporção) efetivamente equaliza as proporções de todas as categorias de Score
+ (Low, Average e High), preparando o conjunto de dados para o treinamento do modelo.
+````
 
-* **One-Hot Encoding:** Gender, Home Ownership, Marital Status
-* **Label Encoding:** Education
+### Mapa de Calor de Correlação Inicial
+
+<img src="img/15_heatmap_correlacao_inicial.png" alt="Mapa de Calor de Correlação Inicial." width="600"/>
+
+````
+- As variáveis numéricas originais (Age, Income e Number of Children) mostram correlações baixas entre si.
+- A correlação mais forte é entre Age (Idade) e Income (Renda), com um valor moderado de 0.69,
+o que é esperado, pois a renda tende a aumentar com a idade.
+-  As correlações envolvendo Number of Children (Número de Filhos) são muito baixas (0.13 com Idade e 0.08 com Renda),
+ indicando que esta variável é praticamente independente das outras duas.
+
+````
+
+### Mapa de Calor de Correlação Completa
+
+<img src="img/14_heatmap_correlacao_completa.png" alt="Mapa de Calor de Correlação Completa." width="600"/>
+
+````
+- O Credit Score tem uma correlação positiva moderada com variáveis como Income (Renda) e Education_Encoded (Nível de Educação).
+- Existe uma forte correlação negativa entre Credit Score e o Gender_Male (Gênero Masculino), sugerindo uma relação inversa com a variável binária de gênero.
+````
+
+> [!TIP]
+> **Correlação Numérica**
+> 
+> A relação entre Age e Income apresentou correlação média-alta (≈ 0.69).
+> 
+>  Paraecer: o aumento da idade reflete progressão profissional e aumento da renda — padrão esperado em bases financeiras.
+> 
+>  **Codificação Categórica**
+> 
+>  One-Hot Encoding: Gender, Home Ownership, Marital Status
+>  Label Encoding: Education
 
 ### Balanceamento das Classes
 
-A variável *Credit Score* estava **desbalanceada**:
+A variável Credit Score estava desbalanceada:
 
 * “Average” → ~70%
 * “Low” → ~20%
@@ -348,9 +422,8 @@ print(Counter(y_res))
 
 <p align="center">
   <b>Johnny Sorato Martins Fernandes</b><br>
-  <sub>Consultoria de Negócios | Cientista de Dados| Analista de Dados - Automação de Processos - SaaS</sub><br><br>
-  <sub> JS Fernandes Consultoria Empresarial - Unidade Primavera do Leste</sub><br><br>
-  📧 fernandesjohnnys@gmail.com &nbsp;&nbsp;📞 (66) 99232-1719
+  <sub>Consultoria | Ciência e Análise de Dados| Python - EDA </sub><br><br>
+    📧 fernandesjohnnys@gmail.com &nbsp;&nbsp;📞 (66) 99232-1719
 </p>
 
 ---
