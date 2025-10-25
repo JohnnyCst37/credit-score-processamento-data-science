@@ -312,9 +312,6 @@ Codificação Categórica:
  
 
 
-## 📈 Etapa 3 - Correlação, Balanceamento e Codificação
-
-
 ### Balanceamento de Target Combinado
 
 <img src="img/12_13_balanceamento_target_combinado.png" alt="Gráfico de Balanceamento de Target Combinado." width="600"/>
