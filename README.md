@@ -130,7 +130,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Credit Score (Score de Crédito)
 
- <img src="img/2_univar_credit_score_distribution.png" alt="Distribuição de Socore de crédito." width="600"/>
+ <img src="img/2_univar_credit_score_distribution.png" alt="Distribuição de Socore de crédito." width="500"/>
 
 
 ```markdown
@@ -140,7 +140,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Distribuição de Propriedade de Imóvel
 
- <img src="img/1_univar_home_ownership_proportion.png" alt="Proporção de tipos de propriedade de imóvel." width="600"/>
+ <img src="img/1_univar_home_ownership_proportion.png" alt="Proporção de tipos de propriedade de imóvel." width="500"/>
 
 ```markdown
 - Predominância de casas próprias, reforçando estabilidade financeira.
@@ -148,7 +148,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Densidade de Idade
 
- <img src="img/3_univar_age_density.png" alt="Distribuição de densidade da idade." width="600"/>
+ <img src="img/3_univar_age_density.png" alt="Distribuição de densidade da idade." width="500"/>
 
 ```markdown
 - Distribuição simétrica entre 28 e 45 anos, mediana ≈ 36.
@@ -157,7 +157,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Densidade de Renda
 
- <img src="img/4_univar_income_density.png" alt="Distribuição de densidade da renda." width="600"/>
+ <img src="img/4_univar_income_density.png" alt="Distribuição de densidade da renda." width="500"/>
 
 ```markdown- Distribuição enviesada à direita (skewed right).
 - Renda concentrada entre 40k e 100k, com cauda longa de altos rendimentos.
@@ -168,7 +168,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Idade vs. Estado Civil
 
- <img src="img/5_bivar_age_vs_baritalstatus.png" alt="Idade vs. Estado Civil." width="600"/>
+ <img src="img/5_bivar_age_vs_baritalstatus.png" alt="Idade vs. Estado Civil." width="500"/>
 
 ```markdown
 - A maior concentração de clientes Single (Solteiro) ocorre nas faixas etárias mais jovens (entre 25 e 40 anos).
@@ -177,7 +177,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Nível de Educação vs. Score de Crédito
 
- <img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="600"/>
+ <img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="500"/>
 
 ```
 - O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
@@ -187,7 +187,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Idade vs. Renda Normalizada
 
- <img src="img/7_bivar_age_vs_income_normalized.png" alt="Idade vs. Renda Normalizada." width="600"/>
+ <img src="img/7_bivar_age_vs_income_normalized.png" alt="Idade vs. Renda Normalizada." width="500"/>
 
 ```
 - Observa-se uma tendência de aumento da renda (harmonizada/normalizada) com o aumento da idade (normalizada), para ambos os gêneros.
@@ -197,7 +197,7 @@ conforme indicado pela linha de regressão mais elevada.
 
 ### Renda vs. Score de Crédito
 
- <img src="img/8_bivar_income_vs_score.png" alt="Renda vs. Score de Crédito." width="600"/>
+ <img src="img/8_bivar_income_vs_score.png" alt="Renda vs. Score de Crédito." width="500"/>
 
 ```
 - O Credit Score "High" (azul) é predominante nas faixas de renda mais altas (a partir de 0.6 na faixa de renda normalizada).
@@ -207,7 +207,7 @@ conforme indicado pela linha de regressão mais elevada.
 
 ### Propriedade de Imóvel vs. Score de Crédito
 
- <img src="img/9_bivar_homeownership_vs_score.png" alt="Propriedade de Imóvel vs. Score de Crédito." width="600"/>
+ <img src="img/9_bivar_homeownership_vs_score.png" alt="Propriedade de Imóvel vs. Score de Crédito." width="500"/>
 
 
 ````
