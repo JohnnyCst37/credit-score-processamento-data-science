@@ -140,7 +140,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Distribuição de Propriedade de Imóvel
 
- <img src="img/1_univar_home_ownership_proportion.png" alt="Proporção de tipos de propriedade de imóvel." width="500"/>
+ <img src="img/1_univar_home_ownership_proportion.png" alt="Proporção de tipos de propriedade de imóvel." width="400"/>
 
 ```markdown
 - Predominância de casas próprias, reforçando estabilidade financeira.
@@ -177,9 +177,9 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Nível de Educação vs. Score de Crédito
 
- <img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="400"/>
+<img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="600"/>
 
-```
+ ```
 - O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
 -  A proporção de Credit Score "High" é significantemente maior nas categorias de maior escolaridade ("Bachelor's Degree", "Master's Degree", "Doctorate").
 -  Isto indica uma correlação positiva entre alta escolaridade e melhor pontuação de crédito.
@@ -337,7 +337,7 @@ o que é esperado, pois a renda tende a aumentar com a idade.
 
 ### Mapa de Calor de Correlação Completa
 
-<img src="img/14_heatmap_correlacao_completa.png" alt="Mapa de Calor de Correlação Completa." width="400"/>
+<img src="img/14_heatmap_correlacao_completa.png" alt="Mapa de Calor de Correlação Completa." width="700"/>
 
 ````
 - O Credit Score tem uma correlação positiva moderada com variáveis como Income (Renda) e Education_Encoded (Nível de Educação).
