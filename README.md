@@ -18,12 +18,10 @@
 
 ## Sumário do Projeto
 
-- [🎯 Objetivo](#objetivo)
-- [📂 Jornada do Projeto](#jornada-do-projeto)
+- [🧮 Projeto de Credit Score - P1](#-projeto-de-credit-score---p1)
 - [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [📂 Dicionário de Dados](#-dicionário-de-dados)
 - [🧩 Etapa 1 — Pré Processamento](#etapa-1---pré-processamento)
-- [📊 Etapa 2 — Análise Univariada e Bivariada](#-etapa-2---análise-univariada-e-bivariada)
+- [📊 Etapa 2 — Análise Univariada e Bivariada](#etapa-2---análise-univariada-e-bivariada)
 - [📈 Etapa 3 — Correlação Balanceamento e Codificação](#-etapa-3---correlação-balanceamento-e-codificação)
 - [🧭 Próximos Passos (Parte 2)](#-próximos-passos-parte-2)
 - [💭 Reflexão Final](#-reflexão-final)
@@ -148,16 +146,6 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 - Predominância de casas próprias, reforçando estabilidade financeira.
 ```
 
-
-### Distribuição do Score de Crédito
-
- <img src="img/2_univar_credit_score_distribution.png" alt="Distribuição do Credit Score." width="600"/>
-
-```markdown
-* A maioria dos clientes possui score "High", indicando perfil de baixo risco.
-* Scores “Average” e “Low” representam menor parcela, exigindo atenção especial na modelagem.
-```
-
 ### Densidade de Idade
 
  <img src="img/3_univar_age_density.png" alt="Distribuição de densidade da idade." width="600"/>
@@ -172,8 +160,8 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
  <img src="img/4_univar_income_density.png" alt="Distribuição de densidade da renda." width="600"/>
 
 ```markdown- Distribuição enviesada à direita (skewed right).
-- Renda concentrada entre **40k e 100k**, com cauda longa de altos rendimentos.
-- Recomendação: **normalização ou transformação logarítmica** para uso em modelos ML.
+- Renda concentrada entre 40k e 100k, com cauda longa de altos rendimentos.
+- Recomendação: normalização ou transformação logarítmica para uso em modelos ML.
 ```
 
 ## Análise Bivariada e Central
@@ -244,7 +232,7 @@ enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia 
 
 ````
 - Clientes sem filhos (0) ou com 1 filho representam a maior parte da amostra.
-- O Score de Crédito **High** (Alto) é predominante para clientes com 0 e 1 filho, indicando uma possível correlação negativa entre o número de filhos e a probabilidade de ter um score baixo.
+- O Score de Crédito High (Alto) é predominante para clientes com 0 e 1 filho, indicando uma possível correlação negativa entre o número de filhos e a probabilidade de ter um score baixo.
 ````
 
 ### Gênero vs. Score de Crédito
@@ -254,7 +242,7 @@ enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia 
 ````
 - A proporção de clientes por gênero (Masculino e Feminino) é bastante equilibrada na amostra.
 - Em ambos os gêneros, o Score de Crédito High (Alto) é a categoria mais frequente.
-- Clientes do gênero **Masculino** parecem ter uma leve vantagem na proporção de Score Alto em comparação com o Feminino.
+- Clientes do gênero Masculino parecem ter uma leve vantagem na proporção de Score Alto em comparação com o Feminino.
 ````
 
 ### Estado Civil vs. Score de Crédito
@@ -322,9 +310,6 @@ Codificação Categórica:
  
 </details>
  
-
-
-## 📈 Etapa 3 - Correlação, Balanceamento e Codificação
 
 
 ### Balanceamento de Target Combinado
