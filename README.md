@@ -177,7 +177,7 @@ df[f'{column_income}_Normalized'] = scaler.fit_transform(df[[column_income]])
 
 ### Nível de Educação vs. Score de Crédito
 
- <img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="500"/>
+ <img src="img/6_bivar_education_vs_score.png" alt="Nível de Educação vs. Score de Crédito." width="400"/>
 
 ```
 - O nível de escolaridade "Bachelor's Degree" e "Master's Degree" apresentam o maior volume total de dados.
@@ -207,7 +207,7 @@ conforme indicado pela linha de regressão mais elevada.
 
 ### Propriedade de Imóvel vs. Score de Crédito
 
- <img src="img/9_bivar_homeownership_vs_score.png" alt="Propriedade de Imóvel vs. Score de Crédito." width="500"/>
+ <img src="img/9_bivar_homeownership_vs_score.png" alt="Propriedade de Imóvel vs. Score de Crédito." width="400"/>
 
 
 ````
@@ -228,7 +228,7 @@ enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia 
 
 ### Crianças vs. Score de Crédito
 
-<img src="img/10_children_vs_score.png" alt="Crianças vs. Score de Crédito." width="600"/>
+<img src="img/10_children_vs_score.png" alt="Crianças vs. Score de Crédito." width="500"/>
 
 ````
 - Clientes sem filhos (0) ou com 1 filho representam a maior parte da amostra.
@@ -237,7 +237,7 @@ enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia 
 
 ### Gênero vs. Score de Crédito
 
-<img src="img/11_gender_vs_score.png" alt="Gênero vs. Score de Crédito." width="600"/>
+<img src="img/11_gender_vs_score.png" alt="Gênero vs. Score de Crédito." width="500"/>
 
 ````
 - A proporção de clientes por gênero (Masculino e Feminino) é bastante equilibrada na amostra.
@@ -247,7 +247,7 @@ enquanto a pontuação "Low" é relativamente mais presente no grupo de moradia 
 
 ### Estado Civil vs. Score de Crédito
 
-<img src="img/12_maritalstatus_vs_score.png" alt="Estado Civil vs. Score de Crédito." width="600"/>
+<img src="img/12_maritalstatus_vs_score.png" alt="Estado Civil vs. Score de Crédito." width="500"/>
 
 ````
 - A categoria Married (Casado) tem uma predominância esmagadora de Score de Crédito High (Alto).
@@ -314,7 +314,7 @@ Codificação Categórica:
 
 ### Balanceamento de Target Combinado
 
-<img src="img/12_13_balanceamento_target_combinado.png" alt="Gráfico de Balanceamento de Target Combinado." width="600"/>
+<img src="img/12_13_balanceamento_target_combinado.png" alt="Gráfico de Balanceamento de Target Combinado." width="500"/>
 
 ````
 - Antes do SMOTE: O target é altamente desbalanceado, com a categoria High (Alto) dominando (Contagem).
@@ -337,7 +337,7 @@ o que é esperado, pois a renda tende a aumentar com a idade.
 
 ### Mapa de Calor de Correlação Completa
 
-<img src="img/14_heatmap_correlacao_completa.png" alt="Mapa de Calor de Correlação Completa." width="600"/>
+<img src="img/14_heatmap_correlacao_completa.png" alt="Mapa de Calor de Correlação Completa." width="400"/>
 
 ````
 - O Credit Score tem uma correlação positiva moderada com variáveis como Income (Renda) e Education_Encoded (Nível de Educação).
